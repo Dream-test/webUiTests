@@ -16,7 +16,7 @@
     </appender>
 
     <!-- Уровень логирования по умолчанию -->
-    <root level="error">
+    <root level="info">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
     </root>
