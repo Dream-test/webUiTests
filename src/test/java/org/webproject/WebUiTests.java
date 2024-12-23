@@ -34,7 +34,7 @@ public class WebUiTests {
 
         $(".title").shouldBe(visible).shouldHave(text("Products"));
 
-        sleep(10000);
+        //sleep(10000);
     }
 
     @Test
