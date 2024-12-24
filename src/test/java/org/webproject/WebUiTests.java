@@ -2,7 +2,7 @@ package org.webproject;
 
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -13,8 +13,8 @@ public class WebUiTests {
     String userLogin = "standard_user";
     String password = "secret_sauce";
 
-    @BeforeAll
-    public static void setUp() {
+    @BeforeEach
+    public void setUp() {
         open("https://www.saucedemo.com/");
     }
 
@@ -39,9 +39,7 @@ public class WebUiTests {
 
     @Test
     public void addToCard() {
-        $("#user-name").setValue(userLogin);
-        $("#password").setValue(password);
-        $("#login-button").click();
+        logIn();
 
         SelenideElement item = $x("//*[@id=\"inventory_container\"]/div/div[1]");
         item.shouldBe(visible);
@@ -63,14 +61,15 @@ public class WebUiTests {
 
     @Test
     public void itemDescription() {
-        $("#user-name").setValue(userLogin);
-        $("#password").setValue(password);
-        $("#login-button").click();
+        logIn();
 
         $("#item_0_title_link").click();
         $("[data-test='inventory-item-name']").shouldBe(visible).shouldHave(text("Sauce Labs Bike Light"));
+    }
 
-       // $("#react-burger-menu-btn").click();
-       // $("#logout_sidebar_link").click();
+    private void logIn() {
+        $("#user-name").setValue(userLogin);
+        $("#password").setValue(password);
+        $("#login-button").click();
     }
 }
