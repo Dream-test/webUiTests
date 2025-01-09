@@ -14,3 +14,11 @@
 2025-01-07 17:17:24 [main] INFO  c.c.s.webdriver.WebDriverFactory - Selenide 7.6.0 / Selenium 4.27.0 / chrome 131.0.6778.205 windows
 2025-01-07 17:19:59 [main] INFO  c.c.s.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
 2025-01-07 17:20:06 [main] INFO  c.c.s.webdriver.WebDriverFactory - Selenide 7.6.0 / Selenium 4.27.0 / chrome 131.0.6778.205 windows
+2025-01-08 21:10:07 [main] INFO  c.c.s.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+2025-01-08 21:10:15 [main] INFO  c.c.s.webdriver.WebDriverFactory - Selenide 7.6.0 / Selenium 4.27.0 / chrome 131.0.6778.205 windows
+2025-01-08 23:33:04 [main] INFO  c.c.s.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+2025-01-08 23:33:19 [main] INFO  c.c.s.webdriver.WebDriverFactory - Selenide 7.6.0 / Selenium 4.27.0 / chrome 131.0.6778.205 windows
+2025-01-08 23:42:38 [main] INFO  c.c.s.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+2025-01-08 23:42:46 [main] INFO  c.c.s.webdriver.WebDriverFactory - Selenide 7.6.0 / Selenium 4.27.0 / chrome 131.0.6778.205 windows
+2025-01-08 23:42:55 [main] INFO  c.c.s.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+2025-01-08 23:43:01 [main] INFO  c.c.s.webdriver.WebDriverFactory - Selenide 7.6.0 / Selenium 4.27.0 / chrome 131.0.6778.205 windows
