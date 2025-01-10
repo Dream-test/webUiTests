@@ -41,7 +41,7 @@ public class ManagementPage {
         }
     }
 
-    public static void selectRoomAccessible(Boolean accessible) {
+    public static void selectRoomAccessible(boolean accessible) {
         if (accessible) {
             RoomFormElement.setRoomAccessible();
         } RoomFormElement.setRoomNotAccessible();
@@ -51,37 +51,37 @@ public class ManagementPage {
         RoomFormElement.enterRoomPrice(roomPrice);
     }
 
-    public static void selectCheckboxHasWiFi(Boolean hasWiFi) {
+    public static void selectCheckboxHasWiFi(boolean hasWiFi) {
         if (hasWiFi) {
             RoomFormElement.checkboxHasWiFi();
         }
     }
 
-    public static void selectCheckboxHasTV(Boolean hasTV) {
+    public static void selectCheckboxHasTV(boolean hasTV) {
         if (hasTV) {
             RoomFormElement.checkboxHasTV();
         }
     }
 
-    public static void selectCheckboxHasRadio(Boolean hasRadio) {
+    public static void selectCheckboxHasRadio(boolean hasRadio) {
         if (hasRadio) {
             RoomFormElement.checkboxHasRadio();
         }
     }
 
-    public static void selectCheckboxHasRefreshments(Boolean hasRefreshments) {
+    public static void selectCheckboxHasRefreshments(boolean hasRefreshments) {
         if (hasRefreshments) {
             RoomFormElement.checkboxHasRefreshments();
         }
     }
 
-    public static void selectCheckboxHasSafe(Boolean hasSafe) {
+    public static void selectCheckboxHasSafe(boolean hasSafe) {
         if (hasSafe) {
             RoomFormElement.checkboxHasSafe();
         }
     }
 
-    public static void selectCheckboxHasViews(Boolean hasViews) {
+    public static void selectCheckboxHasViews(boolean hasViews) {
         if (hasViews) {
             RoomFormElement.checkboxHasViews();
         }

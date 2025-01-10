@@ -12,7 +12,7 @@ public class RandomRoomData {
         };
     }
 
-    public Boolean hasMarker() {
+    public boolean hasMarker() {
         return (newRandomInt() % 2) == 0;
     }
 
