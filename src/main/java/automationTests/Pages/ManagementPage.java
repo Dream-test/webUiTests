@@ -1,12 +1,9 @@
 package automationTests.Pages;
 
 import automationTests.PageElements.RoomFormElement;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.selector.ByAttribute;
-import org.openqa.selenium.By;
 
 import java.util.List;
 
@@ -19,7 +16,7 @@ public class ManagementPage {
     public static final SelenideElement title = $(Selectors.byTagAndText("a", "B&B Booking Management"));
     public static final ElementsCollection roomsList = $$(Selectors.byAttribute("data-testid", "roomlisting"));
 
-    public static void waitManagementPage() {
+    public static void waitManagementPageIsLoaded() {
         title.shouldBe(visible).shouldHave(text("B&B Booking Management"));
     }
 
