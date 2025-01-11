@@ -2,6 +2,7 @@ package automationTests.Tests;
 
 import automationTests.Pages.LoginAdminPage;
 import automationTests.Pages.ManagementPage;
+import automationTests.RandomRoomData;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterEach;
@@ -13,14 +14,7 @@ public class AdminManagementTests {
     final private String roomPrice = "500";
     final private String userName = "admin";
     final private String password = "password";
-    final private String roomType = "Single"; //cases: "Twin", "Double", "Family", "Suite".
-    final private Boolean accessible = true;
-    final private Boolean hasWiFi = true;
-    final private Boolean hasTV = true;
-    final private Boolean hasRadio = true;
-    final private Boolean hasRefreshments = true;
-    final private Boolean hasSafe = true;
-    final private Boolean hasViews = true;
+
 
     @BeforeAll
     public static void configurationBrowser() {
@@ -38,34 +32,45 @@ public class AdminManagementTests {
 
     @Test
     public void adminLoginTest() {
+        //Arrange
         Selenide.open("https://automationintesting.online/#/admin");
+
+        //Act
         login();
-        ManagementPage.waitManagementPage();
+
+        //Assert
+        ManagementPage.waitManagementPageIsLoaded();
     }
 
     @Test
     public void addRoomTest() {
+        //Arrange
+        RandomRoomData roomData = new RandomRoomData();
         Selenide.open("https://automationintesting.online/#/admin");
         login();
-        ManagementPage.waitManagementPage();
+        ManagementPage.waitManagementPageIsLoaded();
+
+        //Act
         ManagementPage.enterRoomName(roomName);
-        ManagementPage.selectRoomType(roomType);
-        ManagementPage.selectRoomAccessible(accessible);
+        ManagementPage.selectRoomType(roomData.roomType());
+        ManagementPage.selectRoomAccessible(roomData.hasMarker());
         ManagementPage.enterRoomPrice(roomPrice);
-        ManagementPage.selectCheckboxHasWiFi(hasWiFi);
-        ManagementPage.selectCheckboxHasTV(hasTV);
-        ManagementPage.selectCheckboxHasRadio(hasRadio);
-        ManagementPage.selectCheckboxHasRefreshments(hasRefreshments);
-        ManagementPage.selectCheckboxHasSafe(hasSafe);
-        ManagementPage.selectCheckboxHasViews(hasViews);
+        ManagementPage.selectCheckboxHasWiFi(roomData.hasMarker());
+        ManagementPage.selectCheckboxHasTV(roomData.hasMarker());
+        ManagementPage.selectCheckboxHasRadio(roomData.hasMarker());
+        ManagementPage.selectCheckboxHasRefreshments(roomData.hasMarker());
+        ManagementPage.selectCheckboxHasSafe(roomData.hasMarker());
+        ManagementPage.selectCheckboxHasViews(roomData.hasMarker());
         ManagementPage.createRoom();
+
+        //Assert
         if (!ManagementPage.namesOfRoom().contains(roomName)) {
             throw new AssertionError("Room name \"" + roomName + "\" was not found in the list of room names.");
-        };
+        }
     }
 
     private void login() {
-        LoginAdminPage.waitForPageIsLoaded();
+        LoginAdminPage.waitForLoginPageIsLoaded();
         LoginAdminPage.enterUsername(userName);
         LoginAdminPage.enterPassword(password);
         LoginAdminPage.clickLoginButton();

@@ -14,7 +14,7 @@ public class LoginAdminPage {
     public static final SelenideElement password = $(By.id("password"));
     public static final SelenideElement loginButton = $(By.id("doLogin"));
 
-    public static void  waitForPageIsLoaded() {
+    public static void  waitForLoginPageIsLoaded() {
         title.shouldBe(visible).shouldHave(text("Log into your account"));
     }
 
